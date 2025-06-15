@@ -16,20 +16,31 @@ def download_videos():
         try:
             filename = str(uuid.uuid4()) + ".mp4"
             filepath = os.path.join(DOWNLOAD_DIR, filename)
+
             ydl_opts = {
                 'format': 'mp4',
                 'outtmpl': filepath,
                 'quiet': True,
-                'noplaylist': True
+                'noplaylist': True,
+                'skip_download': False,
+                'force_generic_extractor': False,
             }
+
             with YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
+                info = ydl.extract_info(url, download=True)
+                thumbnail = info.get("thumbnail", "")
+            
             result.append({
                 "link": url,
-                "file": request.host_url + "video/" + filename
+                "file": request.host_url + "video/" + filename,
+                "thumbnail": thumbnail
             })
+
         except Exception as e:
-            result.append({"link": url, "error": str(e)})
+            result.append({
+                "link": url,
+                "error": str(e)
+            })
 
     return jsonify(result)
 
@@ -39,7 +50,5 @@ def get_video(filename):
     return send_file(path, mimetype="video/mp4")
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+    port = int(os.environ.get("PORT", 10000))  # Render-compatible
     app.run(host="0.0.0.0", port=port)
-
