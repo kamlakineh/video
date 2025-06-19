@@ -6,6 +6,28 @@ app = Flask(__name__)
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
+# Embed your cookies content as a multi-line string inside the code
+cookies_content = """# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.instagram.com	TRUE	/	TRUE	1780324231	mid	aA4_gAAEAAEVYNNnTW672jqpGR1z
+.instagram.com	TRUE	/	TRUE	1780324236	datr	gD8OaJMjm6j4Rs64uTRs-2_-
+.instagram.com	TRUE	/	TRUE	1777300276	ig_did	B0C531C9-A11A-4863-A0DC-B638E436A9BD
+.instagram.com	TRUE	/	TRUE	1777300240	ig_nrcb	1
+.instagram.com	TRUE	/	TRUE	1784300644	ps_l	1
+.instagram.com	TRUE	/	TRUE	1784300644	ps_n	1
+.instagram.com	TRUE	/	TRUE	1750930322	wd	1366x612
+.instagram.com	TRUE	/	TRUE	1784886615	csrftoken	iA6fSf5pSUoHtx5nEA2XEjkGuNTPHzQb
+.instagram.com	TRUE	/	TRUE	1758102615	ds_user_id	68835447659
+.instagram.com	TRUE	/	TRUE	1781861524	sessionid	68835447659%3AD4kx0CBgbmdMDL%3A3%3AAYeGZztpL1tYy2wF1idCiyD_4qVMcrcv3tM7udaYxw
+.instagram.com	TRUE	/	TRUE	0	rur	"LDC\05468835447659\0541781862614:01fe745dd81c92e16db518abcaf370d21c5d8ea554a521030802e56b5503bde127fc1f97"
+"""
+
+# Write the cookies content to cookies.txt when the app starts
+with open("cookies.txt", "w") as f:
+    f.write(cookies_content)
+
 @app.route('/download', methods=['POST'])
 def download_videos():
     data = request.get_json()
@@ -23,9 +45,7 @@ def download_videos():
                 'quiet': True,
                 'noplaylist': True,
                 'merge_output_format': 'mp4',
-                'force_generic_extractor': False,
-                # You can optionally use:
-                # 'cookiesfrombrowser': ('chrome',),  # for Instagram login-required videos
+                'cookiefile': 'cookies.txt',
             }
 
             with YoutubeDL(ydl_opts) as ydl:
@@ -54,5 +74,5 @@ def get_video(filename):
     return jsonify({"error": "File not found"}), 404
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Render-compatible
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
