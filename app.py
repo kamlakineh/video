@@ -18,18 +18,20 @@ def download_videos():
             filepath = os.path.join(DOWNLOAD_DIR, filename)
 
             ydl_opts = {
-                'format': 'mp4',
+                'format': 'bestvideo+bestaudio/best',
                 'outtmpl': filepath,
                 'quiet': True,
                 'noplaylist': True,
-                'skip_download': False,
+                'merge_output_format': 'mp4',
                 'force_generic_extractor': False,
+                # You can optionally use:
+                # 'cookiesfrombrowser': ('chrome',),  # for Instagram login-required videos
             }
 
             with YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=True)
                 thumbnail = info.get("thumbnail", "")
-            
+
             result.append({
                 "link": url,
                 "file": request.host_url + "video/" + filename,
@@ -47,7 +49,9 @@ def download_videos():
 @app.route("/video/<filename>")
 def get_video(filename):
     path = os.path.join(DOWNLOAD_DIR, filename)
-    return send_file(path, mimetype="video/mp4")
+    if os.path.exists(path):
+        return send_file(path, mimetype="video/mp4")
+    return jsonify({"error": "File not found"}), 404
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))  # Render-compatible
