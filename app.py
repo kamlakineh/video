@@ -17,12 +17,11 @@ cookies_content = """# Netscape HTTP Cookie File
 .instagram.com	TRUE	/	TRUE	1777300240	ig_nrcb	1
 .instagram.com	TRUE	/	TRUE	1784300644	ps_l	1
 .instagram.com	TRUE	/	TRUE	1784300644	ps_n	1
-.instagram.com	TRUE	/	TRUE	1750930322	wd	1366x612
-.instagram.com	TRUE	/	TRUE	1784886615	csrftoken	iA6fSf5pSUoHtx5nEA2XEjkGuNTPHzQb
-.instagram.com	TRUE	/	TRUE	1758102615	ds_user_id	68835447659
-.instagram.com	TRUE	/	TRUE	1781861524	sessionid	68835447659%3AD4kx0CBgbmdMDL%3A3%3AAYeGZztpL1tYy2wF1idCiyD_4qVMcrcv3tM7udaYxw
-.instagram.com	TRUE	/	TRUE	0	rur	"LDC\05468835447659\0541781862614:01fe745dd81c92e16db518abcaf370d21c5d8ea554a521030802e56b5503bde127fc1f97"
-"""
+.instagram.com	TRUE	/	TRUE	1751051700	wd	1366x612
+.instagram.com	TRUE	/	TRUE	1785006976	csrftoken	iA6fSf5pSUoHtx5nEA2XEjkGuNTPHzQb
+.instagram.com	TRUE	/	TRUE	1781982882	sessionid	75041012555%3Ak7KqUd7ph09vKa%3A18%3AAYcl-Lmklm0bdJ17UBks39ftr0Sc7z5XDM4QEyU-Kg
+.instagram.com	TRUE	/	TRUE	1758222976	ds_user_id	75041012555
+.instagram.com	TRUE	/	TRUE	0	rur	"ODN\05475041012555\0541781982975:01fe5a959c9508f0d0fd8d6dcc52e12381d2df54522e0151e342982415dcaa9d7756f08e"""
 
 # Write the cookies content to cookies.txt when the app starts
 with open("cookies.txt", "w") as f:
