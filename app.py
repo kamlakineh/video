@@ -6,7 +6,7 @@ app = Flask(__name__)
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-# Embed your cookies content as a multi-line string inside the code
+# Full Instagram cookies embedded in code
 cookies_content = """# Netscape HTTP Cookie File
 # http://curl.haxx.se/rfc/cookie_spec.html
 # This is a generated file!  Do not edit.
@@ -21,9 +21,10 @@ cookies_content = """# Netscape HTTP Cookie File
 .instagram.com	TRUE	/	TRUE	1785006976	csrftoken	iA6fSf5pSUoHtx5nEA2XEjkGuNTPHzQb
 .instagram.com	TRUE	/	TRUE	1781982882	sessionid	75041012555%3Ak7KqUd7ph09vKa%3A18%3AAYcl-Lmklm0bdJ17UBks39ftr0Sc7z5XDM4QEyU-Kg
 .instagram.com	TRUE	/	TRUE	1758222976	ds_user_id	75041012555
-.instagram.com	TRUE	/	TRUE	0	rur	"ODN\05475041012555\0541781982975:01fe5a959c9508f0d0fd8d6dcc52e12381d2df54522e0151e342982415dcaa9d7756f08e"""
+.instagram.com	TRUE	/	TRUE	0	rur	"ODN\05475041012555\0541781982975:01fe5a959c9508f0d0fd8d6dcc52e12381d2df54522e0151e342982415dcaa9d7756f08e"
+"""
 
-# Write the cookies content to cookies.txt when the app starts
+# Write cookies.txt on startup
 with open("cookies.txt", "w") as f:
     f.write(cookies_content)
 
