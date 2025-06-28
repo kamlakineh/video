@@ -21,7 +21,8 @@ cookies_content = """# Netscape HTTP Cookie File
 .instagram.com	TRUE	/	TRUE	1751717885	wd	1366x612
 .instagram.com	TRUE	/	TRUE	1785673095	csrftoken	94IVsrOANTbfTTmECFBhWDv2qYvq7pqw
 .instagram.com	TRUE	/	TRUE	1782649080	sessionid	75041012555%3A4pNFuwQO4C88Vc%3A24%3AAYd9gs83QvatfBlD3OuUO9_VAh4isjFS0MDI_kejnw
-.instagram.com	TRUE	/	TRUE	0	rur	"ODN\05475041012555\0541782649096:01fe1f8a8332fd8eb714c7ef466415db8eaa0b142619a97c260c50ef656cbf8801153a2d""""
+.instagram.com	TRUE	/	TRUE	0	rur	"ODN\05475041012555\0541782649096:01fe1f8a8332fd8eb714c7ef466415db8eaa0b142619a97c260c50ef656cbf8801153a2d" 
+"""
 
 # Write cookies.txt on startup
 with open("cookies.txt", "w") as f:
