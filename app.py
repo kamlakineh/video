@@ -11,17 +11,15 @@ cookies_content = """# Netscape HTTP Cookie File
 # http://curl.haxx.se/rfc/cookie_spec.html
 # This is a generated file!  Do not edit.
 
-.instagram.com	TRUE	/	TRUE	1780324231	mid	aA4_gAAEAAEVYNNnTW672jqpGR1z
-.instagram.com	TRUE	/	TRUE	1780324236	datr	gD8OaJMjm6j4Rs64uTRs-2_-
-.instagram.com	TRUE	/	TRUE	1777300276	ig_did	B0C531C9-A11A-4863-A0DC-B638E436A9BD
-.instagram.com	TRUE	/	TRUE	1777300240	ig_nrcb	1
-.instagram.com	TRUE	/	TRUE	1784300644	ps_l	1
-.instagram.com	TRUE	/	TRUE	1784300644	ps_n	1
-.instagram.com	TRUE	/	TRUE	1751735680	wd	1366x612
-.instagram.com	TRUE	/	TRUE	1785690890	csrftoken	4z9T7hQnTWsKSPxvVpsKuqlByPl0LaCU
-.instagram.com	TRUE	/	TRUE	1758906890	ds_user_id	75343963355
-.instagram.com	TRUE	/	TRUE	1782666878	sessionid	75343963355%3AoI06mGFBtTbIAo%3A13%3AAYfsuKaYN9gsmjmdfCqHpXs6HUkRxgSpcCKaNSKBZg
-.instagram.com	TRUE	/	TRUE	0	rur	"LDC\05475343963355\0541782666889:01feee0d98c935e6c0b63ff699a4dacd7b038023a9600c7b00b0215c0e117cbfc6934b1a"
+.instagram.com	TRUE	/	TRUE	1786859610	csrftoken	ABCsDuwPtmIJaIpVR5lGlZ
+.instagram.com	TRUE	/	TRUE	1786858678	datr	tfRxaIHyNLuIVyFQVTmXmOpF
+.instagram.com	TRUE	/	TRUE	1783835605	ig_did	7E7E36B2-860D-41D7-B9C3-FEEAC0314F39
+.instagram.com	TRUE	/	TRUE	1752904408	wd	1366x607
+.instagram.com	TRUE	/	TRUE	1786858681	mid	aHH0tQALAAEY_JcK3chdiWSFZO5e
+.instagram.com	TRUE	/	TRUE	1783834695	ig_nrcb	1
+.instagram.com	TRUE	/	TRUE	1783835605	sessionid	75343963355%3Alkm8wlgRZtRWCE%3A18%3AAYcKi_wKYWsS8pFpY_3Rk-6Vah9-uyPwjPtH2lFwTg
+.instagram.com	TRUE	/	TRUE	1760075610	ds_user_id	75343963355
+.instagram.com	TRUE	/	TRUE	0	rur	"LDC\05475343963355\0541783835610:01fefe95b1e18a1425b5c1b1d50a6d9becc7b406851894e94532baa561a1a873a9224f5c"
 """
 
 # Write cookies.txt on startup
