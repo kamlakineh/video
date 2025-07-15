@@ -21,7 +21,7 @@ cookies_content = """# Netscape HTTP Cookie File
 .instagram.com	TRUE	/	TRUE	1787167794	ps_l	1
 .instagram.com	TRUE	/	TRUE	1787167794	ps_n	1
 .instagram.com	TRUE	/	TRUE	1784143890	sessionid	75343963355%3AFIEohxxfh0qi9F%3A17%3AAYfJro_tVpLnqAt1Z-x5N9vcRYmAp4KjmsIpbFqAbg
-.instagram.com	TRUE	/	TRUE	0	rur	"RVA\05475343963355\0541784143957:01fe0e395ae955fb1eaace4bb7c0d13d5223894af6f2bde8c9b06ae9dd3e24ab7a5c3369"
+.instagram.com	TRUE	/	TRUE	0	rur	RVA,75343963355,1784143957:01fe0e395ae955fb1eaace4bb7c0d13d5223894af6f2bde8c9b06ae9dd3e24ab7a5c3369
 """
 
 # Write cookies.txt on startup
